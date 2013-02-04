@@ -9,15 +9,57 @@
 #import "ATTViewController.h"
 
 @interface ATTViewController ()
-
+@property (weak, nonatomic) IBOutlet UILabel *selectedWord;
+@property (weak, nonatomic) IBOutlet UIStepper *stepper;
+@property (weak, nonatomic) IBOutlet UITextView *sentence;
+@property (strong, nonatomic) NSArray *words;
 @end
 
 @implementation ATTViewController
+
+
+- (NSArray*) words
+{
+    if (!_words)
+        _words = [[self.sentence.attributedText string]
+                 componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    return _words;
+}
+
+
+
+- (IBAction)selectWord {
+
+    self.selectedWord.text = self.words[(int)self.stepper.value];
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    self.stepper.maximumValue = self.words.count - 1;
 }
 
 - (void)didReceiveMemoryWarning
