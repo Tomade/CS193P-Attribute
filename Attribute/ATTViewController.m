@@ -40,26 +40,12 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     self.stepper.maximumValue = self.words.count - 1;
+    self.selectedWord.text = self.words[0];
 }
 
 - (void)didReceiveMemoryWarning

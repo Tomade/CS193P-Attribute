@@ -30,7 +30,7 @@
                                 <rect key="frame" x="20" y="227" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="RED" backgroundImage="Default-568h@2x.png">
+                                <state key="normal" title="RED">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <state key="highlighted">
@@ -74,7 +74,7 @@
                                 </state>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" id="TMl-HD-Dhf">
-                                <rect key="frame" x="20" y="55" width="280" height="128"/>
+                                <rect key="frame" x="20" y="55" width="280" height="156"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <attributedString key="attributedText">
@@ -99,12 +99,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="89" y="137"/>
+            <point key="canvasLocation" x="269" y="82"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Default-568h@2x.png" width="640" height="1136"/>
-    </resources>
     <classes>
         <class className="ATTViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ATTViewController.h"/>
