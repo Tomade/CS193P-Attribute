@@ -78,13 +78,25 @@
     // Don't understand what's going on here!  The foreground white is obscuring the stroke,
     // but only if the stroke colour is black!
     // Also, why changing the fg colour with the buttons loses the stroke attributes??
+/*
+ The value of NSStrokeWidthAttributeName controls this.  It should be a
+ float-valued NSNumber, of which the absolute value controls the stroke
+ width, and the sign controls the drawing mode; a positive value causes
+ drawing using stroke alone, a negative value causes stroke and fill
+ drawing, and zero (or no value) causes fill only.  If
+ NSForegroundColorAttributeName is present, it is used as the fill color
+ (if fill is drawn); if it is absent, the fill color is black (if fill
+ is drawn).  If NSStrokeColorAttributeName is present, it is the color
+ used for the stroke (if stroke is drawn); if it is absent, the fill
+ color is also used for the stroke (if stroke is drawn).  See
+ <AppKit/NSAttributedString.h>.
+ */
 
 
     [self changeAttributes:
-     @{
-NSStrokeWidthAttributeName: @(-3.0),
-NSStrokeColorAttributeName: [UIColor blackColor],
-NSForegroundColorAttributeName: [UIColor whiteColor]
+     @{NSStrokeWidthAttributeName: @(3.0)
+//       NSStrokeColorAttributeName: [UIColor blackColor],
+//       NSForegroundColorAttributeName: [UIColor yellowColor]
      }];
 }
 
