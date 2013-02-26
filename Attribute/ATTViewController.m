@@ -11,7 +11,7 @@
 @interface ATTViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *selectedWord;
 @property (weak, nonatomic) IBOutlet UIStepper *stepper;
-@property (weak, nonatomic) IBOutlet UILabel *sentence;
+@property (weak, nonatomic) IBOutlet UITextView *sentence;
 @property (strong, nonatomic) NSArray *words;
 @end
 
