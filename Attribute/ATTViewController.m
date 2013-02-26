@@ -11,7 +11,7 @@
 @interface ATTViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *selectedWord;
 @property (weak, nonatomic) IBOutlet UIStepper *stepper;
-@property (weak, nonatomic) IBOutlet UITextView *sentence;
+@property (weak, nonatomic) IBOutlet UILabel *sentence;
 @property (strong, nonatomic) NSArray *words;
 @end
 
@@ -93,13 +93,12 @@
  */
 
 
-    [self changeAttributes:
-     @{NSStrokeWidthAttributeName: @(3.0)
-//       NSStrokeColorAttributeName: [UIColor blackColor],
-//       NSForegroundColorAttributeName: [UIColor yellowColor]
-     }];
+    [self changeAttributes: @{NSStrokeWidthAttributeName: @(3.0)}];
 }
 
+- (IBAction)noOutline {
+    [self changeAttributes: @{NSStrokeWidthAttributeName: @(0.0)}];
+}
 
 
 - (void) changeAttributes:(NSDictionary *) attrs {
@@ -107,6 +106,7 @@
     NSRange where = [[newString string] rangeOfString: self.selectedWord.text];
     [newString addAttributes:attrs range:where];
     self.sentence.attributedText = newString;
+    [self.sentence sizeToFit];
 }
 
 
@@ -119,6 +119,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     self.stepper.maximumValue = self.words.count - 1;
     self.selectedWord.text = self.words[0];
+    [self.sentence sizeToFit];
 }
 
 - (void)didReceiveMemoryWarning
